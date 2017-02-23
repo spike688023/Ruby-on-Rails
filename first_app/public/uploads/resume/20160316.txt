@@ -1,0 +1,62 @@
+20160316
+
+
+Z300M_V3.0.0
+
+BSP
+cd vendor/asus/bsp; git log | grep 6ccf64851830551b7c3acc3f0bb1bb26b9031c1b; cd -;cd kernel-3.18; git log | grep f7b4b4fdd2d92087aee5323ed64567a1d3e47525; cd -;cd external/sepolicy; git log | grep 7224ea6ac8f341f08038b049304ae8ebf7cd9435; cd -;
+
+AMAX
+cd frameworks/base; git log | grep 3225e546668eac21587077a3c4baff30b78ccc4c; cd -;cd system/core; git log | grep 85b44529dd721ee03ab60f1630d91e3c4ae4ea18; cd -;cd build; git log | grep 3052fc7dcde47ed6420f59706860089b34c8eb44; cd -;
+
+\\rd9filesvr\DVCshared\Projects\modem\Z300M\20160302
+
+======M6.0=====WW=======     Z300M_V2.0.2_WW01_WW
+time ./tools/build_MTK_M6.0_WW49.sh build MTK8163_M6.0_WW01_AMAX Z300M V3.0.0 Z300M_V2.0.2_WW01_WW 20160302 Y user      Y WW M ASUS 2>&1 | tee outfile
+time ./tools/build_MTK_M6.0_WW49.sh build MTK8163_M6.0_WW01_AMAX Z300M V3.0.0 Z300M_V2.0.2_WW01_WW 20160302 N userdebug Y WW M ASUS 2>&1 | tee outfile
+======================
+
+time ./tools/build_MTK_M6.0_WW49.sh build MTK8163_M6.0_WW01_AMAX Z300M V3.0.0_kaki Z300M_V2.0.2_WW01_WW 20160302 Y user      N WW M ASUS 2>&1 | tee outfile
+
+time ./tools/build_MTK_M6.0_WW49.sh build MTK8163_M6.0_WW01_AMAX Z300M V3.0.0_kaki Z300M_V2.0.2_WW01_WW 20160302 N userdebug N WW M ASUS 2>&1 | tee outfile
+
+====MMMMMMM=====MTK===BSP merge AP
+/home/android/Projects/release/tools/WW52_auto_merge.sh /home/android/Projects/MTK8163_M6.0_WW01_BSP MTK8163_M6.0_WW01_BSP MTK8163_M6.0_WW01_AMAX
+=====================================
+
+repoE forall -c 'git push SW3 HEAD:refs/heads/QCT8956_M6.0_00080_BSP_ZT581KL'
+
+ZT581KL_T3.3.2
+
+M6.0.1
+
+
+BSP
+cd vendor/asus/bsp; git log | grep db78204dcf052b761c70dcc55625264d46f5da1e; cd -;cd vendor/qcom/proprietary; git log | grep 1c202cca01e8c5cbb6d727eff92d3cdc5fb40f8b; cd -;cd hardware/qcom/camera; git log | grep 093c059ba8db0f3ae1b9f054d59a56a2c6286f8a; cd -;
+
+\\rd9filesvr\DVCshared\Projects\modem\ZT581KL\20160309-factory
+Modem: 101801_16.0.0_160111_F
+
+======M6.0=====VZW======       ZT581KL_T3.3.0_00080
+time ./tools/build_QCT_M6.0.1_00080.sh build QCT8956_M6.0_00080_BSP ZT581KL T3.3.2 ZT581KL_T3.3.0_00080 20160309-factory N eng      Y VZW M101801_16.0.0_160111_F ASUS 2>&1 | tee outfile
+======================
+
+done.
+Replace boot.img
+Replace recovery.img
+Replace system.img
+Replace userdata.img
+Package: out/target/product/asus8163_tb_380_m/full_asus8163_tb_380_m-img-V3.0.0-user.android.zip
+Package OTA: out/target/product/asus8163_tb_380_m/full_asus8163_tb_380_m-ota-V3.0.0-user.android.zip
+Dist: out/dist/full_asus8163_tb_380_m-target_files-WW-user.zip
+
+
+
+full_asus8163_tb_380_m-ota-V3.0.0-user.android.zip  這要改名
+
+
+
+  1825 ++ get_make_command
+  1826 ++ echo command make
+  1827 + command make ASUS_TARGET_VERSION=V3.0.0_kaki TARGET_PROJECT=Z300M -j32 TARGET_SKU=WW OEM=ASUS
+  1828 + make ASUS_TARGET_VERSION=V3.0.0_kaki TARGET_PROJECT=Z300M -j32 TARGET_SKU=WW OEM=ASUS

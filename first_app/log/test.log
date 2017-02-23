@@ -1,0 +1,41 @@
+  [1m[36m (163.2ms)[0m  [1mCREATE TABLE "resumes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "attachment" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (126.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (141.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (134.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170123050609')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "resumes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "resumes" ("name", "attachment", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2017-02-07 09:54:37', '2017-02-07 09:54:37', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "resumes" ("name", "attachment", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2017-02-07 09:54:37', '2017-02-07 09:54:37', 298486374)[0m
+  [1m[35m (140.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+ResumesControllerTest: test_should_get_create
+---------------------------------------------
+Processing by ResumesController#create as HTML
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+ResumesControllerTest: test_should_get_destroy
+----------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+ResumesControllerTest: test_should_get_index
+--------------------------------------------
+Processing by ResumesController#index as HTML
+  [1m[35mResume Load (0.2ms)[0m  SELECT "resumes".* FROM "resumes"
+  Rendered resumes/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------
+ResumesControllerTest: test_should_get_new
+------------------------------------------
+Processing by ResumesController#new as HTML
+  Rendered resumes/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

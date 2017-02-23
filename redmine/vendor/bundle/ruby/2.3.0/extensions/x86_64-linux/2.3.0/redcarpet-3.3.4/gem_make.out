@@ -1,0 +1,30 @@
+current directory: /home/spike/redmine-3.3.1-0/apps/redmine/htdocs/vendor/bundle/ruby/2.3.0/gems/redcarpet-3.3.4/ext/redcarpet
+/usr/bin/ruby2.3 -r ./siteconf20170202-18148-rq752j.rb extconf.rb
+creating Makefile
+
+current directory: /home/spike/redmine-3.3.1-0/apps/redmine/htdocs/vendor/bundle/ruby/2.3.0/gems/redcarpet-3.3.4/ext/redcarpet
+make "DESTDIR=" clean
+
+current directory: /home/spike/redmine-3.3.1-0/apps/redmine/htdocs/vendor/bundle/ruby/2.3.0/gems/redcarpet-3.3.4/ext/redcarpet
+make "DESTDIR="
+compiling houdini_html_e.c
+compiling html_smartypants.c
+compiling stack.c
+compiling markdown.c
+markdown.c: In function ‘sd_markdown_render’:
+markdown.c:2838:3: warning: passing argument 1 of ‘is_codefence’ discards ‘const’ qualifier from pointer target type [enabled by default]
+markdown.c:1391:1: note: expected ‘uint8_t *’ but argument is of type ‘const uint8_t *’
+compiling autolink.c
+compiling html.c
+compiling houdini_href_e.c
+compiling buffer.c
+buffer.c: In function ‘bufcstr’:
+buffer.c:111:2: warning: passing argument 1 of ‘bufgrow’ discards ‘const’ qualifier from pointer target type [enabled by default]
+buffer.c:60:1: note: expected ‘struct buf *’ but argument is of type ‘const struct buf *’
+compiling rc_render.c
+compiling rc_markdown.c
+linking shared-object redcarpet.so
+
+current directory: /home/spike/redmine-3.3.1-0/apps/redmine/htdocs/vendor/bundle/ruby/2.3.0/gems/redcarpet-3.3.4/ext/redcarpet
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 redcarpet.so ./.gem.20170202-18148-1mmod05
